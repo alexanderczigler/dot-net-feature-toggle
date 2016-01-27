@@ -2,6 +2,12 @@ using System.Collections.Generic;
 
 namespace Ilix.Configuration
 {
+    public interface IFeatureToggle
+    {
+        bool Disabled(string feature);
+        bool Enabled(string feature);
+    }
+    
     public class FeatureToggle : IFeatureToggle
     {
         public bool Enabled(string feature)
